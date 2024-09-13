@@ -10,29 +10,8 @@
 </head>
 
 <body class="container">
-    <h1 class="mt-5">Mini Chat</h1>
+    <h1 class="mt-5">Acceso denegado</h1>
     <hr>
-
-    <form id="miFormulario">
-        <div class="row">
-            <div class="col-8">
-                <input type="text" id="txtMensaje" placeholder="Mensaje" class="form-control">
-            </div>
-
-            <div class="col-4">
-                <button class="btn btn-primary" type="submit">Enviar</button>
-            </div>
-        </div>
-    </form>
-
-    <div class="row">
-        <div class="col">
-            <ul id="misMensajes" class="mt-2">          
-            </ul>
-        </div>
-    </div>
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"
         integrity="sha512-luMnTJZ7oEchNDZAtQhgjomP1eZefnl82ruTH/3Oj/Yu5qYtwL7+dVRccACS/Snp1lFXq188XFipHKYE75IaQQ=="
@@ -40,24 +19,9 @@
     <script>
         const socket = io('http://localhost:3000');
 
-        const $formulario = document.querySelector('#miFormulario');
-        const $mesajes = document.querySelector('#misMensajes');
-        const $txtMensaje = document.querySelector('#txtMensaje');
-
-
-        $formulario.addEventListener('submit', (ev) => {
-            ev.preventDefault();
-            const nuevoMensaje = $txtMensaje.value;
-
-            socket.emit('mensaje-to-server', {
-                msg: nuevoMensaje,
-            })
-        })
-
         socket.on('mensaje-from-server', (data) => {
-            $mesajes.innerHTML+=`<li>${data.msg}</li>`;
-        }) 
 
+        })
 
     </script>
 </body>
