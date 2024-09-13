@@ -56,19 +56,7 @@
 
         socket.on('mensaje-from-server', (data) => {
             $mesajes.innerHTML+=`<li>${data.msg}</li>`;
-        })
-
-        // socket.on('mensaje-bienvenida', (data) => {
-        //     console.log(data);
-        // })
-
-        // setTimeout(() => {
-        //     socket.emit('mensaje-cliente', {
-        //         msg: 'cliente',
-        //         name: 'Carlos'
-        //     })
-
-        // }, 2000)
+        }) 
 
 
     </script>
